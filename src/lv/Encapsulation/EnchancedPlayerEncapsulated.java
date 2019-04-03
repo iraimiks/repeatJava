@@ -1,0 +1,25 @@
+package lv.Encapsulation;
+
+public class EnchancedPlayerEncapsulated {
+    private String name;
+    private int hitPoint = 100;
+    private String weapon;
+
+    public EnchancedPlayerEncapsulated(String name, int health, String weapon) {
+        this.name = name;
+        if(health >0 && health <= 100) {
+            this.hitPoint = health;
+        }
+        this.weapon = weapon;
+    }
+    public void loseHealth(int damage){
+        this.hitPoint = this.hitPoint - damage;
+        if(this.hitPoint <= 0){
+            System.out.println("Payer knocke out");
+        }
+    }
+
+    public int getHealth() {
+        return hitPoint;
+    }
+}
